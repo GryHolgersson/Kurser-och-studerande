@@ -30,7 +30,7 @@ public class Student
             Console.WriteLine(course);
         }
     }
-    public override string ToString()//Gör så att samma student inte kan skrivas in två gånger 
+    public override string ToString()//Skriver ut studentens namn
     {
         return Name;
     }

@@ -21,7 +21,7 @@ public class Course
     {
         if (Students.Contains(student))// kollar om studenten redan finns 
         {
-            Console.WriteLine(student.Name + "Is already in the class");
+            Console.WriteLine(student.Name + " is already in the class");
             return;
         }
         if (Students.Count >= MaxSeats)//Kollar om kursen är full
@@ -50,7 +50,7 @@ public class Course
     }
     public override string ToString()
     {
-        return Name + " (" + Students.Count + "/" + MaxSeats + " platser)";//Skriver ut kursens namn, antal studenter och max antal platser 
+        return Name + " (" + Students.Count + "/" + MaxSeats + " seats)";//Skriver ut kursens namn, antal studenter och max antal platser 
     }   // "/" = string concatenation så det blir ex 2/5 plater är tagna
 }
 

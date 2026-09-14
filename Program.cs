@@ -49,28 +49,31 @@ jonna.Join(english);
 dennis.Join(programming);
 
 //Skriver ut kurserna och vilka som är anmälda
+Console.WriteLine("--- Programming ---");
 Console.WriteLine(programming);
 programming.RollCall();
 
+Console.WriteLine();   // tom rad
+Console.WriteLine("--- English ---");
 Console.WriteLine(english);
 english.RollCall();
 
-/*//Testar full kurs – programming har redan 3/3, detta ska säga "Kursen är full"
-Student eric = new Student("Eric");
-eric.Join(programming);
+Console.WriteLine();
+Console.WriteLine("--- Try full course ---");
+Student anna = new Student("Anna");
+anna.Join(programming);
 
-//Testar dubbelanmälan – simon är redan anmäld, detta ska säga "Simon är redan anmäld"
+Console.WriteLine();
+Console.WriteLine("--- Try duplicate enrollment ---");
 simon.Join(programming);
 
-//Skriver ut Simons schema
+Console.WriteLine();
+Console.WriteLine("--- Simons schedule ---");
 simon.Schedule();
 
-//Tar bort en student och visar att den försvinner från båda hållen
+Console.WriteLine();
+Console.WriteLine("--- Simon leaves Programming ---");
 simon.Leave(programming);
-
-Console.WriteLine("Efter att Simon lämnat:");
 Console.WriteLine(programming);
 programming.RollCall();
-simon.Schedule();   // ska nu vara tom*/
-
-
+simon.Schedule();
