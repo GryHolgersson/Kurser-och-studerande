@@ -3,3 +3,13 @@ C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj
 C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.AssemblyInfo.cs
 C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.csproj.CoreCompileInputs.cache
 C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.sourcelink.json
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\bin\Debug\net10.0\Kurser-och-studerande.exe
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\bin\Debug\net10.0\Kurser-och-studerande.deps.json
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\bin\Debug\net10.0\Kurser-och-studerande.runtimeconfig.json
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\bin\Debug\net10.0\Kurser-och-studerande.dll
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\bin\Debug\net10.0\Kurser-och-studerande.pdb
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.dll
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\refint\Kurser-och-studerande.dll
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.pdb
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.genruntimeconfig.cache
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\ref\Kurser-och-studerande.dll

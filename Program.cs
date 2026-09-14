@@ -31,15 +31,22 @@ skriv ut med RollCall() och Schedule() så att det syns att båda hållen hänge
 ovan fungerar (t.ex. att en full kurs säger nej, och att dubbelanmälan inte ger dubbletter).*/
 
 //Skapar kurser
-Course english = new Course("English", 5);
-Course Programming = new Course("Programming, 3");
+Course english = new Course("English", 2);
+Course programming = new Course("Programming", 3);
 
 //Skapar studenter 
 Student simon = new Student ("Simon");
 Student eric = new Student ("Eric");
 Student lennita = new Student("Lennita");
 Student jonna = new Student ("Jonna");
+Student dennis = new Student("Dennis");
 
 //Studenter går med i kurser
+simon.Join(programming);
+eric.Join(programming);
+lennita.Join(english);
+jonna.Join(english);
+dennis.Join(programming);
+
 
 

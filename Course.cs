@@ -19,12 +19,12 @@ public class Course
     }
     public void Enroll(Student student)//Meddelar att det finns plats
     {
-        if (student.Contains(student))// kollar om studenten redan finns 
+        if (Students.Contains(student))// kollar om studenten redan finns 
         {
             Console.WriteLine(student.Name + "Is already in the class");
             return;
         }
-        if (student.Count >= MaxSeats)//Kollar om kursen är full
+        if (Students.Count >= MaxSeats)//Kollar om kursen är full
         {
             Console.WriteLine("Kursen är full");
             return;
