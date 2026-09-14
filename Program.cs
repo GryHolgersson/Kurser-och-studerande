@@ -48,5 +48,13 @@ lennita.Join(english);
 jonna.Join(english);
 dennis.Join(programming);
 
+//Skriver ut kurserna och vilka som är anmälda
+Console.WriteLine(programming);
+programming.RollCall();
+
+Console.WriteLine(english);
+english.RollCall();
+
+
 
 
