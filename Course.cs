@@ -29,7 +29,19 @@ public class Course
             Console.WriteLine("Kursen är full");
             return;
         }
+        Students.Add(student);//Lägger till studenter i kursen
+        student.Courses.Add(this); //Lägger till kursen hos studenten
     }
+    public void Remove(Student student)//Tar bort student ur kursen
+    {
+        if (!Students.Contains(student))// Om studenten inte finns, gör inget
+        {
+            return;
+        }
+        Students.Remove(student);
+        student.Courses.Remove(this); //Tar bort kursen hos studenten
+    }
+    
 }
 
     
