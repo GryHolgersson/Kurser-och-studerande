@@ -8,8 +8,8 @@
 
 public class Student
 {
-    public string Name;
-    public List<Course> Courses = new List<Course>();
+    public string Name;//Namn på studenten
+    public List<Course> Courses = new List<Course>();//Lista av elever i kursen 
 
     public Student (string name)
     {
@@ -17,6 +17,22 @@ public class Student
     }
     public void Join(Course course)//Kallar på Course metoden
     {
-        course.Enroll(this);
+        course.Enroll(this);//Lägger till student
     }
+    public void Leave(Course course)//Samma här, kallar på Course metoden 
+    {
+        course.Remove(this)//Tar bort student
+    }
+    public void Schedule()//Skriver ut alla kurser studenten går 
+    {
+        foreach (Course course in Courses)
+        {
+            Console.WriteLine(course);
+        }
+    }
+    public override string ToString()//Gör så att samma student inte kan skrivas in två gånger 
+    {
+        return Name;
+    }
+    
 }
