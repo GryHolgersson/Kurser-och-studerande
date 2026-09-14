@@ -8,9 +8,15 @@
 
 public class Course
 {
-    public string Name
+    public string Name; //Kursens namn
+    public int MaxSeats;// Max antal platser i kursen
+    public List<Student> Students = new List<Student>();// Lista över anmälda studenter 
+
+    public Course(string name, int maxSeats)//Skapar en kurs med kurs namn och platsantal
     {
-        get => CourseName;// läser/hämtar värdet
-        set => CourseName = value;//"=>" gör detta. Value representerar kommande värde och i detta fall sparar det i CourseName
+        Name = name;
+        MaxSeats = maxSeats;
     }
 }
+
+    
