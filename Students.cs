@@ -21,7 +21,7 @@ public class Student
     }
     public void Leave(Course course)//Samma här, kallar på Course metoden 
     {
-        course.Remove(this)//Tar bort student
+        course.Remove(this);//Tar bort student 
     }
     public void Schedule()//Skriver ut alla kurser studenten går 
     {
