@@ -41,7 +41,17 @@ public class Course
         Students.Remove(student);
         student.Courses.Remove(this); //Tar bort kursen hos studenten
     }
-    
+    public void RollCall()//Skriver ut alla studenter i kursen
+    {
+        foreach (Student student in Students)
+        {
+            Console.WriteLine(student);
+        }
+    }
+    public override string ToString()
+    {
+        return Name + " (" + Students.Count + "/" + MaxSeats + " platser)";//Skriver ut kursens namn, antal studenter och max antal platser 
+    }   // "/" = string concatenation så det blir ex 2/5 plater är tagna
 }
 
     
