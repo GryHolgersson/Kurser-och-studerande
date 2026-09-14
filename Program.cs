@@ -55,6 +55,22 @@ programming.RollCall();
 Console.WriteLine(english);
 english.RollCall();
 
+/*//Testar full kurs – programming har redan 3/3, detta ska säga "Kursen är full"
+Student eric = new Student("Eric");
+eric.Join(programming);
 
+//Testar dubbelanmälan – simon är redan anmäld, detta ska säga "Simon är redan anmäld"
+simon.Join(programming);
+
+//Skriver ut Simons schema
+simon.Schedule();
+
+//Tar bort en student och visar att den försvinner från båda hållen
+simon.Leave(programming);
+
+Console.WriteLine("Efter att Simon lämnat:");
+Console.WriteLine(programming);
+programming.RollCall();
+simon.Schedule();   // ska nu vara tom*/
 
 
