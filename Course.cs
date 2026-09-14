@@ -17,6 +17,14 @@ public class Course
         Name = name;
         MaxSeats = maxSeats;
     }
+    public void Enroll(Student student)//Meddelar att det finns plats
+    {
+        if (student.Contains(student))// kollar om studenten redan finns 
+        {
+            Console.WriteLine(student.Name + "Is already in the class");
+            return;
+        }
+    }
 }
 
     

@@ -1,0 +1,5 @@
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.AssemblyInfoInputs.cache
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.AssemblyInfo.cs
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.csproj.CoreCompileInputs.cache
+C:\Users\gryho\OneDrive\Desktop\Skola\Kurs 2\Uppgifter\Kurser-och-studerande\obj\Debug\net10.0\Kurser-och-studerande.sourcelink.json
