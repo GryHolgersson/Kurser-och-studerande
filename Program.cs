@@ -30,8 +30,16 @@ I Program.cs: Skapa några kurser och några studerande, anmäl och avanmäl dem
 skriv ut med RollCall() och Schedule() så att det syns att båda hållen hänger ihop och att reglerna
 ovan fungerar (t.ex. att en full kurs säger nej, och att dubbelanmälan inte ger dubbletter).*/
 
-Console.WriteLine("Enter course name");
-string courseName = Console.ReadLine();
+//Skapar kurser
+Course english = new Course("English", 5);
+Course Programming = new Course("Programming, 3");
 
-Console.WriteLine("Enter maximum number of students");
-int maxSeat = int.Parse(Console.ReadLine());
+//Skapar studenter 
+Student simon = new Student ("Simon");
+Student eric = new Student ("Eric");
+Student lennita = new Student("Lennita");
+Student jonna = new Student ("Jonna");
+
+//Studenter går med i kurser
+
+
