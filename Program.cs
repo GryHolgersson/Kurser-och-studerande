@@ -34,46 +34,86 @@ ovan fungerar (t.ex. att en full kurs säger nej, och att dubbelanmälan inte ge
 Course english = new Course("English", 2);
 Course programming = new Course("Programming", 3);
 
-//Skapar studenter 
-Student simon = new Student ("Simon");
-Student eric = new Student ("Eric");
-Student lennita = new Student("Lennita");
-Student jonna = new Student ("Jonna");
-Student dennis = new Student("Dennis");
+//Lista över alla skapade studenter, så vi kan hitta dem igen
+List<Student> allaStudenter = new List<Student>();
 
-//Studenter går med i kurser
-simon.Join(programming);
-eric.Join(programming);
-lennita.Join(english);
-jonna.Join(english);
-dennis.Join(programming);
+bool fortsatt = true;//Bool som gör att while loopen fortsätter
 
-//Skriver ut kurserna och vilka som är anmälda
-Console.WriteLine("--- Programming ---");
-Console.WriteLine(programming);
-programming.RollCall();
+while (fortsatt)//While loop som gör att man kan fortsätta
+{
+    Console.WriteLine();
+    Console.WriteLine("Enter a student name (or 'stop' to finish):");
+    string namn = Console.ReadLine();
 
-Console.WriteLine();   // tom rad
-Console.WriteLine("--- English ---");
-Console.WriteLine(english);
+    if (namn.ToLower() == "stop")//Kollar om man vill sluta, om ja så avslutas loopen
+    {
+        fortsatt = false;//Stänger av loopen
+        continue;//Hoppar över resten av loopen
+    }
+
+    Console.WriteLine("Would you like to join or leave a course? (join/leave)");//Låter användaren välja om de vill gå med i eller lämna en kurs
+    string val = Console.ReadLine();
+
+    Console.WriteLine("Which course? (english/programming)");//Låter användaren välja kurs
+    string kursval = Console.ReadLine();
+
+    Course vaildKurs;//Skapar en variabel som ska innehålla kursen användaren valt
+    switch (kursval.ToLower())//Kollar vilken kurs användaren valt
+    {
+        case "english"://Om användaren valt english, sätt vaildKurs till english
+            vaildKurs = english;
+            break;
+        case "programming"://Om användaren valt programming, sätt vaildKurs till programming
+            vaildKurs = programming;
+            break;
+        default://Om användaren valt något annat än english eller programming, skriv ut ett felmeddelande och fortsätt loopen
+            Console.WriteLine("Unknown course, please try again.");
+            continue;
+    }
+
+    //Letar efter en redan skapad student med samma namn
+    Student student = null;//Skapar en variabel som ska innehålla studenten användaren valt
+    foreach (Student s in allaStudenter)//Kollar igenom alla studenter som skapats
+    {
+        if (s.Name == namn) //Om en student med samma namn hittas, sätt student till den studenten och bryt loopen
+        {
+            student = s;
+            break;
+        }
+    }
+
+    if (val.ToLower() == "join")//Om användaren valt att gå med i en kurs
+    {
+        if (student == null)//Om studenten inte finns, skapa en ny student och lägg till den i listan över alla studenter
+        {
+            student = new Student(namn);
+            allaStudenter.Add(student);
+        }
+        student.Join(vaildKurs);
+    }
+    else if (val.ToLower() == "leave")//Om användaren valt att lämna en kurs
+    {
+        if (student == null)//Om studenten inte finns, skriv ut ett felmeddelande
+        {
+            Console.WriteLine(namn + " isn't enrolled in any course yet.");//Skriver ut att studenten inte är med i någon kurs
+        }
+        else//Om studenten finns, ta bort studenten från kursen
+        {
+            student.Leave(vaildKurs);
+        }
+    }
+    else//Om användaren valt något annat än join eller leave, skriv ut ett felmeddelande
+    {
+        Console.WriteLine("Unknown option, please write 'join' or 'leave'.");
+    }
+}
+
+Console.WriteLine();//Skriver ut en tom rad för att separera resultatet från inputen
+Console.WriteLine("--- Resultat ---");
+
+Console.WriteLine(english);//Skriver ut kursens namn, antal studenter och max antal platser
 english.RollCall();
 
-Console.WriteLine();
-Console.WriteLine("--- Try full course ---");
-Student anna = new Student("Anna");
-anna.Join(programming);
-
-Console.WriteLine();
-Console.WriteLine("--- Try duplicate enrollment ---");
-simon.Join(programming);
-
-Console.WriteLine();
-Console.WriteLine("--- Simons schedule ---");
-simon.Schedule();
-
-Console.WriteLine();
-Console.WriteLine("--- Simon leaves Programming ---");
-simon.Leave(programming);
+Console.WriteLine();//Skriver ut en tom rad för att separera resultatet från inputen
 Console.WriteLine(programming);
 programming.RollCall();
-simon.Schedule();
