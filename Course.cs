@@ -24,6 +24,11 @@ public class Course
             Console.WriteLine(student.Name + "Is already in the class");
             return;
         }
+        if (student.Count >= MaxSeats)//Kollar om kursen är full
+        {
+            Console.WriteLine("Kursen är full");
+            return;
+        }
     }
 }
 
