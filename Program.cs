@@ -51,7 +51,17 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
         continue;//Hoppar över resten av loopen
     }
 
-    Console.WriteLine("Would you like to join, leave, schedule or a course? (join/leave/schedule)");
+    Student? student = null;
+
+    foreach(Student s in allStudents)
+    {
+        if (s. Name == name)
+        {
+            student = s;
+        }
+    }
+
+    /*Console.WriteLine("Would you like to join, leave, schedule or a course? (join/leave/schedule)");
     //Låter användaren välja om de vill gå med i eller lämna en kurs samt om de vill få upp en lista på alla studenter i kursen 
     // och en lista på alla kurser studenten går
     string? choice = Console.ReadLine();
