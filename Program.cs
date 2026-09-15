@@ -51,8 +51,9 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
         continue;//Hoppar över resten av loopen
     }
 
-    Console.WriteLine("Would you like to join, leave or list a course? (join/leave/list)");
-    //Låter användaren välja om de vill gå med i eller lämna en kurs samt om de vill få upp en lista på alla studenter i kursen
+    Console.WriteLine("Would you like to join, leave, schedule or list a course? (join/leave/list)");
+    //Låter användaren välja om de vill gå med i eller lämna en kurs samt om de vill få upp en lista på alla studenter i kursen 
+    // och en lista på alla kurser studenten går
     string? choice = Console.ReadLine();
 
     Console.WriteLine("Which course? (english/programming)");//Låter användaren välja kurs
@@ -76,6 +77,13 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
         {
             vaildCourse.RollCall();//Skriver ut alla studenter i kursen
             continue;//Hoppar över resten av loopen
+        }
+        {
+            if (choice?.ToLower() == "schedule")
+            {
+                validCourse.Schedule();//Skriver ut alla kurser studenten går
+                continue;//Hoppar över resten av loopen
+            }
         }
     }
     //Letar efter en redan skapad student med samma namn
