@@ -43,9 +43,9 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
 {
     Console.WriteLine();
     Console.WriteLine("Enter a student name (or 'stop' to finish):");
-    string name = Console.ReadLine();
+    string? name = Console.ReadLine();
 
-    if (name.ToLower() == "stop")//Kollar om man vill sluta, om ja så avslutas loopen
+    if (name?.ToLower() == "stop")//Kollar om man vill sluta, om ja så avslutas loopen
     {
         KeepGoing = false;//Stänger av loopen
         continue;//Hoppar över resten av loopen
@@ -53,13 +53,13 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
 
     Console.WriteLine("Would you like to join, leave or list a course? (join/leave/list)");
     //Låter användaren välja om de vill gå med i eller lämna en kurs samt om de vill få upp en lista på alla studenter i kursen
-    string choice = Console.ReadLine();
+    string? choice = Console.ReadLine();
 
     Console.WriteLine("Which course? (english/programming)");//Låter användaren välja kurs
-    string CourseChoice = Console.ReadLine();
+    string? CourseChoice = Console.ReadLine();
 
     Course vaildCourse;//Skapar en variabel som ska innehålla kursen användaren valt
-    switch (CourseChoice.ToLower())//Kollar vilken kurs användaren valt
+    switch (CourseChoice?.ToLower())//Kollar vilken kurs användaren valt
     {
         case "english"://Om användaren valt english, sätt vaildKurs till english
             vaildCourse = english;
@@ -72,14 +72,14 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
             continue;
     }
     {
-        if (choice.ToLower() == "list")//Om användaren valt att lista alla studenter i kursen
+        if (choice?.ToLower() == "list")//Om användaren valt att lista alla studenter i kursen
         {
             vaildCourse.RollCall();//Skriver ut alla studenter i kursen
             continue;//Hoppar över resten av loopen
         }
     }
     //Letar efter en redan skapad student med samma namn
-    Student student = null;//Skapar en variabel som ska innehålla studenten användaren valt
+    Student? student = null;//Skapar en variabel som ska innehålla studenten användaren valt
     foreach (Student s in allStudents)//Kollar igenom alla studenter som skapats
     {
         if (s.Name == name) //Om en student med samma namn hittas, sätt student till den studenten och bryt loopen
@@ -89,7 +89,7 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
         }
     }
 
-    if (choice.ToLower() == "join")//Om användaren valt att gå med i en kurs
+    if (choice?.ToLower() == "join")//Om användaren valt att gå med i en kurs
     {
         if (student == null)//Om studenten inte finns, skapa en ny student och lägg till den i listan över alla studenter
         {
@@ -98,7 +98,7 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
         }
         student.Join(vaildCourse);
     }
-    else if (choice.ToLower() == "leave")//Om användaren valt att lämna en kurs
+    else if (choice?.ToLower() == "leave")//Om användaren valt att lämna en kurs
     {
         if (student == null)//Om studenten inte finns, skriv ut ett felmeddelande
         {
