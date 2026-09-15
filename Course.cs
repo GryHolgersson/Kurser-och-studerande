@@ -30,7 +30,10 @@ public class Course
             return;
         }
         Students.Add(student);//Lägger till studenter i kursen
-        student.Courses.Add(this); //Lägger till kursen hos studenten
+        if (!student.Courses.Contains(this));
+        {
+            student.Courses.Add(this);
+        } //Lägger till kursen hos studenten
     }
     public void Remove(Student student)//Tar bort student ur kursen
     {
@@ -39,7 +42,10 @@ public class Course
             return;
         }
         Students.Remove(student);
-        student.Courses.Remove(this); //Tar bort kursen hos studenten
+        if (student.Courses.Contains(this));
+        {
+            student.Courses.Remove(this);
+        } //Tar bort kursen hos studenten
     }
     public void RollCall()//Skriver ut alla studenter i kursen
     {

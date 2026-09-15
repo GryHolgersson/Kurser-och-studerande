@@ -17,7 +17,7 @@ public class Student
     }
     public void Join(Course course)//Kallar på Course metoden
     {
-        course.Enroll(this);//Lägger till student
+        course.Enroll(this);
     }
     public void Leave(Course course)//Samma här, kallar på Course metoden 
     {
