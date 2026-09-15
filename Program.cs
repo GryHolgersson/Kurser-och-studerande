@@ -93,7 +93,7 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
     {
         if (student == null)//Om studenten inte finns, skapa en ny student och lägg till den i listan över alla studenter
         {
-            student = new Student(name);
+            student = new Student(name!);
             allStudents.Add(student);
         }
         student.Join(vaildCourse);
