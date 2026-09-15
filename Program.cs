@@ -108,13 +108,26 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
         }
         else//Om studenten finns, ta bort studenten från kursen
         {
-            student.Schedule();//Skriver ut vilka kurser studenten går
             student.Leave(validCourse);//Tar bort studenten från kursen 
         }
     }
     else//Om användaren valt något annat än join eller leave, skriv ut ett felmeddelande
     {
         Console.WriteLine("Unknown option, please write 'join' or 'leave'.");
+    }
+    {
+        else if (choice?.ToLower() == "schedule")//Om användaren valt att skriva ut studentens schema
+        {
+            if (student == null)//Om studenten inte finns, felmeddelande
+            {
+                Console.WriteLine(name + " isn't enrolled in any course yet.");//Skriver ut att studenten inte är med i någon kurs
+            }
+            else//Om studenten finns, skriv ut studentens schema
+            {
+                student.Schedule();//Skriver ut studentens schema
+
+            }
+        }
     }
 }
 
