@@ -31,6 +31,8 @@ skriv ut med RollCall() och Schedule() så att det syns att båda hållen hänge
 ovan fungerar (t.ex. att en full kurs säger nej, och att dubbelanmälan inte ger dubbletter).*/
 
 //Skapar kurser
+using System.Threading.Tasks.Dataflow;
+
 Course english = new Course("English", 2);
 Course programming = new Course("Programming", 3);
 
@@ -58,7 +60,24 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
         if (s. Name == name)
         {
             student = s;
+            break;
         }
+    }
+Console.WriteLine("Would you like to join, leave or see schedule?");
+Console.WriteLine("Write: join / leave / schedule");
+string? choice = Console.ReadLine();
+
+string action = choice?.ToLower() ?? " ";
+
+if (action == "join")
+    {
+        if (student == null)
+        
+            student = new Student(name!);
+            allStudents.Add(student);
+        }
+        Console.WriteLine("Which course? (english/programming)");
+        string? courseChoice = Console.ReadLine();
     }
 
     /*Console.WriteLine("Would you like to join, leave, schedule or a course? (join/leave/schedule)");
