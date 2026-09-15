@@ -59,14 +59,14 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
     Console.WriteLine("Which course? (english/programming)");//Låter användaren välja kurs
     string? CourseChoice = Console.ReadLine();
 
-    Course vaildCourse;//Skapar en variabel som ska innehålla kursen användaren valt
+    Course validCourse;//Skapar en variabel som ska innehålla kursen användaren valt
     switch (CourseChoice?.ToLower())//Kollar vilken kurs användaren valt
     {
-        case "english"://Om användaren valt english, sätt vaildKurs till english
-            vaildCourse = english;
+        case "english"://Om användaren valt english, sätt validCourse till english
+            validCourse = english;
             break;
-        case "programming"://Om användaren valt programming, sätt vaildKurs till programming
-            vaildCourse = programming;
+        case "programming"://Om användaren valt programming, sätt validCourse till programming
+            validCourse = programming;
             break;
         default://Om användaren valt något annat än english eller programming, skriv ut ett felmeddelande och fortsätt loopen
             Console.WriteLine("Unknown course, please try again.");
@@ -75,16 +75,10 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
     {
         if (choice?.ToLower() == "list")//Om användaren valt att lista alla studenter i kursen
         {
-            vaildCourse.RollCall();//Skriver ut alla studenter i kursen
+            validCourse.RollCall();//Skriver ut alla studenter i kursen
             continue;//Hoppar över resten av loopen
         }
-        {
-            if (choice?.ToLower() == "schedule")
-            {
-                validCourse.Schedule();//Skriver ut alla kurser studenten går
-                continue;//Hoppar över resten av loopen
-            }
-        }
+        
     }
     //Letar efter en redan skapad student med samma namn
     Student? student = null;//Skapar en variabel som ska innehålla studenten användaren valt
@@ -104,7 +98,7 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
             student = new Student(name!);
             allStudents.Add(student);
         }
-        student.Join(vaildCourse);
+        student.Join(validCourse);
     }
     else if (choice?.ToLower() == "leave")//Om användaren valt att lämna en kurs
     {
@@ -114,7 +108,7 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
         }
         else//Om studenten finns, ta bort studenten från kursen
         {
-            student.Leave(vaildCourse);
+            student.Schedule(validCourse);
         }
     }
     else//Om användaren valt något annat än join eller leave, skriv ut ett felmeddelande
