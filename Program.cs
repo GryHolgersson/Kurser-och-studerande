@@ -108,7 +108,8 @@ while (KeepGoing)//While loop som gör att man kan fortsätta
         }
         else//Om studenten finns, ta bort studenten från kursen
         {
-            student.Schedule(validCourse);
+            student.Schedule();//Skriver ut vilka kurser studenten går
+            student.Leave(validCourse);//Tar bort studenten från kursen 
         }
     }
     else//Om användaren valt något annat än join eller leave, skriv ut ett felmeddelande
