@@ -100,8 +100,15 @@ if (action == "join")
 
     student.Join(validCourse);
     {
-        
-    }
+        else if (action == "leave")
+        {
+            if (student == null)
+            {
+                Console.WriteLine(name + " isn´t enrolled in any course yet.");
+                continue;
+            }
+        }
+    
 
     /*Console.WriteLine("Would you like to join, leave, schedule or a course? (join/leave/schedule)");
     //Låter användaren välja om de vill gå med i eller lämna en kurs samt om de vill få upp en lista på alla studenter i kursen 
