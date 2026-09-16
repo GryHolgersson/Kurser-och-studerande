@@ -1,8 +1,17 @@
 ﻿
+ //Hårdkodad version: 
+
+Course english = new Course ("English", 2);
+Course programming = new Course ("Programming", 3);
+
+Student simon = new Student("Simon");
+Student eric = new Student("Eric");
+Student lennita = new Student("Lennita");
+Student jonna = new Student("Jonna");
 
 
-using System.Threading.Tasks.Dataflow;
 
+/*
 //Skapar kurser
 Course english = new Course("English", 2);
 Course programming = new Course("Programming", 3);
@@ -137,4 +146,4 @@ Console.WriteLine();
 
 Console.WriteLine(programming);
 programming.RollCall();
-
+*/
