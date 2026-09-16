@@ -1,17 +1,53 @@
 ﻿
  //Hårdkodad version: 
 
-Course english = new Course ("English", 2);
-Course programming = new Course ("Programming", 3);
+Course english = new Course ("English", 2); //Lägger till kurs
+Course programming = new Course ("Programming", 3);//Lägger till kurs
 
-Student simon = new Student("Simon");
-Student eric = new Student("Eric");
-Student lennita = new Student("Lennita");
-Student jonna = new Student("Jonna");
+Student simon = new Student("Simon");//Lägger till student
+Student eric = new Student("Eric");//Lägger till student
+Student lennita = new Student("Lennita");//Lägger till student
+Student jonna = new Student("Jonna");//Lägger till student
 
+Console.WriteLine("----Enrolled----");
+
+english.Enroll(simon);//Lägger till student i kurs
+english.Enroll(eric);
+
+lennita.Join(english);//försöker gå med i kurs
+
+english.Enroll(simon);//Finns redan i kursen
+
+programming.Enroll(simon);//Lägger till i kurs
+programming.Enroll(eric);
+jonna.Join(programming);//går med i kursen
+
+Console.WriteLine();
+Console.WriteLine("----Removed----");
+
+english.Remove(eric);//plockar bort ur kurs
+
+lennita.Leave(english);//Lämnar kurs
+
+Console.WriteLine();
+Console.WriteLine("----Result----");
+
+Console.WriteLine(english);//Visar hur många som finns i kursen
+english.RollCall();
+
+Console.WriteLine();
+Console.WriteLine(programming);//Visar hur många som finns i kursen 
+programming.RollCall();
+
+Console.WriteLine();//Visar alla studenters scheman
+simon.Schedule();
+eric.Schedule();
+lennita.Schedule();
+jonna.Schedule();
 
 
 /*
+//Interaktivt program
 //Skapar kurser
 Course english = new Course("English", 2);
 Course programming = new Course("Programming", 3);
