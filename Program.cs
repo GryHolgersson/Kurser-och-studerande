@@ -72,7 +72,7 @@ string action = choice?.ToLower() ?? " ";
 
 if (action == "join")
     {
-        if (student == null);
+        if (student == null)
     {
             student = new Student(name!);
             allStudents.Add(student);
@@ -107,6 +107,8 @@ if (action == "join")
                 Console.WriteLine(name + " is not enrolled in any course yet.");
                 continue;
             }
+ 
+
             Console.WriteLine("Which course? (english/programming)");
             string? courseChoice = Console.ReadLine();
 
@@ -127,6 +129,7 @@ if (action == "join")
             continue;
 
         }
+      
         student.Leave(validCourse);
         }
         else if (action == "schedule")
@@ -182,95 +185,3 @@ Console.WriteLine();
 Console.WriteLine(programming);
 programming.RollCall();
 
-    /*Console.WriteLine("Would you like to join, leave, schedule or a course? (join/leave/schedule)");
-    //Låter användaren välja om de vill gå med i eller lämna en kurs samt om de vill få upp en lista på alla studenter i kursen 
-    // och en lista på alla kurser studenten går
-    string? choice = Console.ReadLine();
-
-    Console.WriteLine("Which course? (english/programming)");//Låter användaren välja kurs
-    string? CourseChoice = Console.ReadLine();
-
-    Course validCourse;//Skapar en variabel som ska innehålla kursen användaren valt
-    switch (CourseChoice?.ToLower())//Kollar vilken kurs användaren valt
-    {
-        case "english"://Om användaren valt english, sätt validCourse till english
-            validCourse = english;
-            break;
-        case "programming"://Om användaren valt programming, sätt validCourse till programming
-            validCourse = programming;
-            break;
-        default://Om användaren valt något annat än english eller programming, skriv ut ett felmeddelande och fortsätt loopen
-            Console.WriteLine("Unknown course, please try again.");
-            continue;
-    }
-
-    Console.WriteLine("ZEEE VALID COURSE IS " + validCourse);
-
-    if (choice?.ToLower() == "list")//Om användaren valt att lista alla studenter i kursen
-    {
-        validCourse.RollCall();//Skriver ut alla studenter i kursen
-        continue;//Hoppar över resten av loopen
-    }
-
-    //Letar efter en redan skapad student med samma namn
-    Student? student = null;//Skapar en variabel som ska innehålla studenten användaren valt
-    foreach (Student s in allStudents)//Kollar igenom alla studenter som skapats
-    {
-        if (s.Name == name) //Om en student med samma namn hittas, sätt student till den studenten och bryt loopen
-        {
-            student = s;
-            break;
-        }
-    }
-
-    string action = choice?.ToLower() ?? "";
-
-    if (action == "join")//Om användaren valt att gå med i en kurs
-    {
-        Console.WriteLine("ABOUT TO JOOOOOOOOOIN");
-        if (student == null)//Om studenten inte finns, skapa en ny student och lägg till den i listan över alla studenter
-        {
-            Console.WriteLine("CREEATEEEEE NEW STUDENT");
-            student = new Student(name!);
-            allStudents.Add(student);
-        }
-        Console.WriteLine("SOOO " +student.Name + " JOINS " + validCourse.Name);
-        student.Join(validCourse);
-    }
-    else if (action == "leave")//Om användaren valt att lämna en kurs
-    {
-        if (student == null)//Om studenten inte finns, skriv ut ett felmeddelande
-        {
-            Console.WriteLine(name + " isn't enrolled in any course yet.");//Skriver ut att studenten inte är med i någon kurs
-        }
-        else//Om studenten finns, ta bort studenten från kursen
-        {
-            student.Leave(validCourse);//Tar bort studenten från kursen 
-        }
-    }
-    else if (action == "schedule")//Om användaren valt att skriva ut studentens schema
-    {
-        if (student == null)//Om studenten inte finns, felmeddelande
-        {
-            Console.WriteLine(name + " isn't enrolled in any course yet.");//Skriver ut att studenten inte är med i någon kurs
-        }
-        else//Om studenten finns, skriv ut studentens schema
-        {
-            student.Schedule();//Skriver ut studentens schema
-        }
-    }
-    else//Om användaren valt något annat än join, leave eller schedule, skriv ut ett felmeddelande
-    {
-        Console.WriteLine("Unknown option, please write 'join', 'leave' or 'schedule'.");
-    }
-}
-
-Console.WriteLine();//Skriver ut en tom rad för att separera resultatet från inputen
-Console.WriteLine("--- Result ---");
-
-Console.WriteLine(english);//Skriver ut kursens namn, antal studenter och max antal platser
-english.RollCall();
-
-Console.WriteLine();//Skriver ut en tom rad för att separera resultatet från inputen
-Console.WriteLine(programming);
-programming.RollCall();

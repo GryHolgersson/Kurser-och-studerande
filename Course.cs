@@ -30,7 +30,7 @@ public class Course
             return;
         }
         Students.Add(student);//Lägger till studenter i kursen
-        if (!student.Courses.Contains(this));
+        if (!student.Courses.Contains(this))
         {
             student.Courses.Add(this);
         } //Lägger till kursen hos studenten
@@ -42,13 +42,19 @@ public class Course
             return;
         }
         Students.Remove(student);
-        if (student.Courses.Contains(this));
+        if (student.Courses.Contains(this))
         {
             student.Courses.Remove(this);
         } //Tar bort kursen hos studenten
     }
     public void RollCall()//Skriver ut alla studenter i kursen
     {
+        if (Students.Count == 0)
+        {
+            Console.WriteLine("No students enrolled");
+            return;
+        }
+
         foreach (Student student in Students)
         {
             Console.WriteLine(student);
