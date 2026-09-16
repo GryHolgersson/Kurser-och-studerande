@@ -112,7 +112,19 @@ if (action == "join")
 
             Course validCourse;
 
-    
+            switch (courseChoice?.ToLower())
+        {
+            case "english":
+            validCourse = english;
+            break;
+
+            case "programming":
+            validCourse = programming;
+            break;
+
+        }
+
+          
         {
             
         }
