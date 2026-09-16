@@ -30,9 +30,10 @@ I Program.cs: Skapa några kurser och några studerande, anmäl och avanmäl dem
 skriv ut med RollCall() och Schedule() så att det syns att båda hållen hänger ihop och att reglerna
 ovan fungerar (t.ex. att en full kurs säger nej, och att dubbelanmälan inte ger dubbletter).*/
 
-//Skapar kurser
+
 using System.Threading.Tasks.Dataflow;
 
+//Skapar kurser
 Course english = new Course("English", 2);
 Course programming = new Course("Programming", 3);
 
@@ -72,7 +73,7 @@ string action = choice?.ToLower() ?? " ";
 if (action == "join")
     {
         if (student == null)
-        
+    }
             student = new Student(name!);
             allStudents.Add(student);
         }
@@ -81,17 +82,25 @@ if (action == "join")
 
         Course validCourse;
 
-        switch (courseChoice? = english);
-        break;
+        switch (courseChoice?.ToLower());
+        {
+            case "english":
+            validCourse = english;
+            break;
+            
+            case "programming":
+            validCourse = programming;
+            break;
+            
+            default:
+            Console.WriteLine("Unknown course, please try again.");
+            continue;
 
-        case "programming":
-        validCourse = programming;
-        break;
+    }
 
-        default:
-        Console.WriteLine("Unknown course, please try again.");
-        continue;
-
+    student.Join(validCourse);
+    {
+        
     }
 
     /*Console.WriteLine("Would you like to join, leave, schedule or a course? (join/leave/schedule)");
