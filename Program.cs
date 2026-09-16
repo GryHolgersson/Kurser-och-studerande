@@ -141,37 +141,13 @@ if (action == "join")
         }
         else
         {
-            Console.WriteLine(name + "´s schedule");
+            student.Schedule();
         }
     }
-    else if (action == "list")
-    {
-        Console.WriteLine("Which course? (english/programming)");
-        string? courseChoice = Console.ReadLine();
-
-        Course validCourse;
-
-        switch (courseChoice?.ToLower())
-        
-    {
-        case "english":
-        validCourse = english;
-        break;
-
-        case "programming":
-        validCourse = programming;
-        break;
-
-        default:
-        Console.WriteLine("Course unknown, please try again");
-        continue;
-    }
-
-    validCourse.RollCall();
-}
+    
 else
 {
-    Console.WriteLine("Option unknown, please write 'join', 'leave', 'schedule' or 'list'.");
+    Console.WriteLine("Option unknown, please write 'join', 'leave' or 'schedule' .");
 }
 }
 Console.WriteLine();

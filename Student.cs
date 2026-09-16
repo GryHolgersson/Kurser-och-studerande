@@ -25,10 +25,17 @@ public class Student
     }
     public void Schedule()//Skriver ut alla kurser studenten går 
     {
+         if (Courses.Count == 0)
+        {
+            Console.WriteLine(Name + " has not signed up for any course");
+            return;
+        }
+
         foreach (Course course in Courses)
         {
             Console.WriteLine(course);
         }
+        
     }
     public override string ToString()//Skriver ut studentens namn
     {
