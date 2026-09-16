@@ -78,6 +78,20 @@ if (action == "join")
         }
         Console.WriteLine("Which course? (english/programming)");
         string? courseChoice = Console.ReadLine();
+
+        Course validCourse;
+
+        switch (courseChoice? = english);
+        break;
+
+        case "programming":
+        validCourse = programming;
+        break;
+
+        default:
+        Console.WriteLine("Unknown course, please try again.");
+        continue;
+
     }
 
     /*Console.WriteLine("Would you like to join, leave, schedule or a course? (join/leave/schedule)");
