@@ -141,11 +141,46 @@ if (action == "join")
             Console.WriteLine(name + "´s schedule");
         }
     }
-    else if
+    else if (action == "list")
     {
+        Console.WriteLine("Which course? (english/programming)");
+        string? courseChoice = Console.ReadLine();
+
+        Course validCourse;
+
+        switch (courseChoice?.ToLower())
         
+    {
+        case "english":
+        validCourse = english;
+        break;
+
+        case "programming":
+        validCourse = programming;
+        break;
+
+        default:
+        Console.WriteLine("Course unknown, please try again");
+        continue;
     }
-    
+
+    validCourse.RollCall();
+}
+else
+{
+    Console.WriteLine("Option unknown, please write 'join', 'leave', 'schedule' or 'list'.");
+}
+}
+Console.WriteLine();
+Console.WriteLine("----Result----");
+
+Console.WriteLine(english);
+english.RollCall();
+
+Console.WriteLine();
+
+Console.WriteLine(programming);
+programming.RollCall();
 
     /*Console.WriteLine("Would you like to join, leave, schedule or a course? (join/leave/schedule)");
     //Låter användaren välja om de vill gå med i eller lämna en kurs samt om de vill få upp en lista på alla studenter i kursen 
