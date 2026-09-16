@@ -72,8 +72,8 @@ string action = choice?.ToLower() ?? " ";
 
 if (action == "join")
     {
-        if (student == null)
-    }
+        if (student == null);
+    {
             student = new Student(name!);
             allStudents.Add(student);
         }
@@ -82,7 +82,7 @@ if (action == "join")
 
         Course validCourse;
 
-        switch (courseChoice?.ToLower());
+        switch (courseChoice?.ToLower())
         {
             case "english":
             validCourse = english;
@@ -99,7 +99,7 @@ if (action == "join")
     }
 
     student.Join(validCourse);
-    {
+}
         else if (action == "leave")
         {
             if (student == null)
@@ -107,6 +107,15 @@ if (action == "join")
                 Console.WriteLine(name + " isn´t enrolled in any course yet.");
                 continue;
             }
+            Console.WriteLine("Which course? (english/programming)");
+            string? courseChoice = Console.ReadLine();
+
+            Course validCourse;
+
+    
+        {
+            
+        }
         }
     
 
