@@ -47,7 +47,7 @@ jonna.Schedule();
 
 
 /*
-//Interaktivt program
+//Interaktiv version
 //Skapar kurser
 Course english = new Course("English", 2);
 Course programming = new Course("Programming", 3);
