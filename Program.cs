@@ -104,7 +104,7 @@ if (action == "join")
         {
             if (student == null)
             {
-                Console.WriteLine(name + " isn´t enrolled in any course yet.");
+                Console.WriteLine(name + " is not enrolled in any course yet.");
                 continue;
             }
             Console.WriteLine("Which course? (english/programming)");
@@ -122,13 +122,29 @@ if (action == "join")
             validCourse = programming;
             break;
 
-        }
+            default:
+            Console.WriteLine("Course unknown, please try again");
+            continue;
 
-          
+        }
+        student.Leave(validCourse);
+        }
+        else if (action == "schedule")
         {
+            if (student == null)
             
+        {
+        Console.WriteLine(name + "is not enrolled in any course");
         }
+        else
+        {
+            Console.WriteLine(name + "´s schedule");
         }
+    }
+    else if
+    {
+        
+    }
     
 
     /*Console.WriteLine("Would you like to join, leave, schedule or a course? (join/leave/schedule)");
